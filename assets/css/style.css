@@ -1,0 +1,13 @@
+/*
+	FILTERS
+*/
+.news_filter_box{
+	float:left;
+	border-width:1px;
+	border-style:solid;
+	border-color:#d3d1d5;
+	padding:4px;
+	margin-top:5px;
+	
+	background-color:white;
+}
