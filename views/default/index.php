@@ -103,15 +103,15 @@
     <div class="panel core-box small">
       <div class="panel-tools">
         <a href="#" class="btn btn-xs btn-link panel-close">
-          <i class="fa fa-times"></i>
+          <i class="fa fa-times"></i><br>2DO
         </a>
       </div>
       <div class="panel-body no-padding">
         <div class="text-center core-icon panel-blue">
-          <i class="fa fa-users icon-big"></i>
+          <i class="fa fa-wrench icon-big"></i>
         </div>
         <div class="padding-20 core-content">
-          <h3 class="title block no-margin">Thématique 1</h3>
+          <h3 class="title block no-margin">Init Data</h3>
         </div>
       </div>
     </div>
@@ -120,15 +120,15 @@
     <div class="panel core-box small">
       <div class="panel-tools">
         <a href="#" class="btn btn-xs btn-link panel-close">
-          <i class="fa fa-times"></i>
+          <i class="fa fa-times"></i><br>2DO
         </a>
       </div>
       <div class="panel-body no-padding">
         <div class="text-center core-icon panel-blue">
-          <i class="fa fa-users icon-big"></i>
+          <i class="fa fa-wrench icon-big"></i>
         </div>
         <div class="padding-20 core-content">
-          <h3 class="title block no-margin">Thématique 1</h3>
+          <h3 class="title block no-margin">Module Menu</h3>
         </div>
       </div>
     </div>
@@ -137,15 +137,15 @@
     <div class="panel core-box small">
       <div class="panel-tools">
         <a href="#" class="btn btn-xs btn-link panel-close">
-          <i class="fa fa-times"></i>
+          <i class="fa fa-times"></i><br>2DO
         </a>
       </div>
       <div class="panel-body no-padding">
         <div class="text-center core-icon panel-blue">
-          <i class="fa fa-users icon-big"></i>
+          <i class="fa fa-wrench icon-big"></i>
         </div>
         <div class="padding-20 core-content">
-          <h3 class="title block no-margin">Thématique 1</h3>
+          <h3 class="title block no-margin">Notifications</h3>
         </div>
       </div>
     </div>
@@ -154,15 +154,15 @@
     <div class="panel core-box small">
       <div class="panel-tools">
         <a href="#" class="btn btn-xs btn-link panel-close">
-          <i class="fa fa-times"></i>
+          <i class="fa fa-times"></i><br>2DO
         </a>
       </div>
       <div class="panel-body no-padding">
         <div class="text-center core-icon panel-blue">
-          <i class="fa fa-users icon-big"></i>
+          <i class="fa fa-wrench icon-big"></i>
         </div>
         <div class="padding-20 core-content">
-          <h3 class="title block no-margin">Thématique 1</h3>
+          <h3 class="title block no-margin">??? </h3>
         </div>
       </div>
     </div>
