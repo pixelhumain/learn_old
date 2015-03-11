@@ -22,10 +22,6 @@ class LearnController extends Controller
   
   public $footerText = "2009 - 2015";
   public $footerImages = array(
-      array("img"=>"/images/logoORD.PNG","url"=>"http://openrd.io"),
-      array("img"=>"/images/logo_region_reunion.png","url"=>"http://www.regionreunion.com"),
-      array("img"=>"/images/technopole.jpg","url"=>"http://technopole-reunion.com"),
-      array("img"=>"/images/Logo_Licence_Ouverte_noir_avec_texte.gif","url"=>"https://data.gouv.fr"),
       array("img"=>'/images/blog-github.png',"url"=>"https://github.com/pixelhumain/pixelhumain"),
       array("img"=>'/images/opensource.gif',"url"=>"http://opensource.org/"));
 
@@ -37,42 +33,43 @@ class LearnController extends Controller
 
   public $notifications = array();
   public $sidebar1 = array(
-    array('label' => "Management", "key"=>"management","iconClass"=>"fa fa-home","getChildren"=> "management" ),
-    array('label' => "Smart Immo", "key"=>"smartimmo","iconClass"=>"fa fa-home",
-        "children"=> array(
-                  "Generali" => array( "label"=>"Dev","key"=>"generali", "href"=>"/twh/smartimmo/generali"),
-          "Generali2" => array( "label"=>"Générali","key"=>"generali2", "href"=>"/twh/smartimmo/generali2")
-                ))
+    array('label' => "Events ", "key"=>"events","iconClass"=>"fa fa-calendar","href"=> "/learn/event" ),
+    array('label' => "Give us a Smile ", "key"=>"smile","iconClass"=>"fa fa-smile-o","href"=> "/learn/smile" ),
+    
     );
   
   public $toolbarMenuAdd = array(
      
-    array('label' => "Perimeters", "key"=>"perimeter",
+    array('label' => "Event", "key"=>"event",
         "children"=> array(
-          "perimeters" => array( "label"=>"Add a Perimeter","key"=>"perimeters", "href"=>"/ph/twh/perimeter", "iconStack"=>array("fa fa-circle-o fa-stack-1x fa-lg","fa fa-plus fa-stack-1x stack-right-bottom text-danger")),
-          "sites" => array( "label"=>"Add a site","key"=>"sites", "href"=>"/ph/twh/perimeter", "iconStack"=>array("fa fa-circle fa-stack-1x fa-lg","fa fa-plus fa-stack-1x stack-right-bottom text-danger")),
+          "newEvent" => array( "label"=>"Add new event","key"=>"newEvent", "class"=>"new-event", "href"=>"#newEvent", "iconStack"=>array("fa fa-calendar-o fa-stack-1x fa-lg","fa fa-plus fa-stack-1x stack-right-bottom text-danger")),
         )
-    ),
-    
+    )
+  );
+  public $subviews = array(
+    "event.eventSV",
   );
 
 public $toolbarMenuMaps = array(
-    array('label' => "Meters",  'desc' => "Analyse Precisly your energy Usage", "class"=>"ajaxSV", "onclick"=>"openSubView('Meters', '/twh/sig/meters', null)",     'extra' => "see the map",  "iconClass"=>"fa-sitemap text-dark-green"),
-    array('label' => "Buildings", 'desc' => "See all buildings", "class"=>"ajaxSV", "onclick"=>"openSubView('Buildings', '/twh/sig/buildings', null)",  'extra' => "see the map",  "iconClass"=>"fa-building text-dark-danger"),
-    array('label' => "Events",  'desc' => "See currently on-going events","class"=>"ajaxSV", "onclick"=>"openSubView('Events', '/twh/sig/events', null)",     'extra' => "see the map",  "iconClass"=>"fa-calendar text-purple"),
 );
 
 public $pages = array(
   "default" => array(
-    "index"=>array("href"=>"/ph/twh/default/index",'title' => "Index",'title' => "Energy Dashboard"),
+    "index"=>array("href"=>"/ph/learn/default/index",'title' => "Index",'title' => "Learning Dashboard"),
+  ),
+  "event" => array(
+    "index"=>array("href"=>"/ph/learn/event/index",'title' => "Index",'title' => "Event List"),
+    "public"=>array("href"=>"/ph/learn/event/public",'title' => "View"),
+    "save"=>array("href"=>"/ph/learn/event/save"),
+    "delete"=>array("href"=>"/ph/learn/event/delete"),
   ),
 );
 
 function initPage()
 {
-    $cs = Yii::app()->getClientScript();
+    //$cs = Yii::app()->getClientScript();
     //this Js lib contains any global module specific Js variables or functions
-    $cs->registerScriptFile($this->module->assetsUrl.'/js/twh.js' , CClientScript::POS_END);
+    //$cs->registerScriptFile($this->module->assetsUrl.'/js/learn.js' , CClientScript::POS_END);
 
     //echo Yii::app()->controller->id."/".Yii::app()->controller->action->id;
     /*if( Yii::app()->controller->id."/".Yii::app()->controller->action->id != "person/login" && Yii::app()->controller->id."/".Yii::app()->controller->action->id != "person/authenticate" && !Yii::app()->session["user"] )

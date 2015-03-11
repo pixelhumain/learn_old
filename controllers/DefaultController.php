@@ -11,7 +11,6 @@ class DefaultController extends LearnController {
 
     protected function beforeAction($action)
   	{
-
       parent::initPage();
 		  return parent::beforeAction($action);
   	}
@@ -22,8 +21,9 @@ class DefaultController extends LearnController {
      */
 	public function actionIndex() 
 	{
-      
-      	$this->render("index");
+    
+    $events = PHDB::find(PHType::TYPE_EVENTS);
+    $this->render("index",array("events"=>$events));
       
       
   }

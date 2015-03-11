@@ -1,19 +1,39 @@
 <?php
-$cs = Yii::app()->getClientScript();
+//$cs = Yii::app()->getClientScript();
 
 //assets from the theme
-$cs->registerCssFile(Yii::app()->theme->baseUrl. '/assets/plugins/weather-icons/css/weather-icons.min.css');
-$cs->registerScriptFile(Yii::app()->theme->baseUrl. '/assets/plugins/bootstrap-progressbar/bootstrap-progressbar.min.js' , CClientScript::POS_END);
+//$cs->registerCssFile(Yii::app()->theme->baseUrl. '/assets/plugins/weather-icons/css/weather-icons.min.css');
+//$cs->registerScriptFile(Yii::app()->theme->baseUrl. '/assets/plugins/bootstrap-progressbar/bootstrap-progressbar.min.js' , CClientScript::POS_END);
 
 //assets from the ctk
-$cs->registerCssFile(Yii::app()->request->baseUrl. '/css/vis.css');
+//$cs->registerCssFile(Yii::app()->request->baseUrl. '/css/vis.css');
 
 //assets from the module
-$cs->registerScriptFile($this->module->assetsUrl.'/js/script.js' , CClientScript::POS_END);
+//$cs->registerScriptFile($this->module->assetsUrl.'/js/script.js' , CClientScript::POS_END);
 		
 ?>
 <!-- start: PAGE CONTENT -->
 <div class="row">
+  <div class="col-md-6 col-lg-3 col-sm-6">
+    <div class="panel core-box">
+      <div class="panel-tools">
+        <a href="#" class="btn btn-xs btn-link panel-close">
+          <i class="fa fa-times"></i>
+        </a>
+      </div>
+      <div class="panel-body no-padding">
+        <div class="padding-20 text-center core-icon">
+          <i class="fa fa-users icon-big text-pink"></i>
+        </div>
+        <div class="padding-20 core-content">
+          <h3 class="title block no-margin text-pink">Citoyens</h3>
+          <span class="subtitle">
+            Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper.
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <div class="col-md-6 col-lg-3 col-sm-6">
     <div class="panel panel-default panel-white core-box">
@@ -23,28 +43,222 @@ $cs->registerScriptFile($this->module->assetsUrl.'/js/script.js' , CClientScript
         </a>
       </div>
       <div class="panel-body no-padding">
-        <div class="partition-green padding-20 text-center core-icon">
-          <i class="fa fa-users fa-3x icon-big"></i>
+        <div class="padding-20 text-center core-icon">
+          <i class="fa fa-users icon-big text-green"></i>
         </div>
         <div class="padding-20 core-content">
-          <h3 class="title block no-margin">Association</h3>
-          <span class="subtitle"> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. </span>
+          <h3 class="title block no-margin text-green">Associations</h3>
+          <span class="subtitle">
+            Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper.
+          </span>
         </div>
       </div>
-      <div class="panel-footer clearfix no-padding">
-        <div class=""></div>
-        <a href="<?php echo Yii::app()->createUrl("/".$this->module->id."/person?tabId=panel_organisations")?>" class="col-xs-4 padding-10 text-center text-white tooltips partition-green" data-toggle="tooltip" data-placement="top" title="my NGOs" ><i class="fa fa-user"></i></a>
-        <a href="#" onclick="openSubView($(this).attr('alt'), '/<?php echo $this->module->id?>/organization/form/type/NGO',null);" class="col-xs-4 padding-10 text-center text-white tooltips partition-blue" data-toggle="tooltip" data-placement="top" title="Add an NGO" alt="Add an NGO"><i class="fa fa-plus"></i></a>
-        <a href="<?php echo Yii::app()->createUrl("/".$this->module->id."/organization/index/type/NGO")?>" class="col-xs-4 padding-10 text-center text-white tooltips partition-red" data-toggle="tooltip" data-placement="top" title="all NGOs"><i class="fa fa-chevron-right"></i></a>
+    </div>
+  </div>
+
+  <div class="col-md-6 col-lg-3 col-sm-6">
+    <div class="panel panel-default panel-white core-box">
+      <div class="panel-tools">
+        <a href="#" class="btn btn-xs btn-link panel-close">
+          <i class="fa fa-times"></i>
+        </a>
+      </div>
+      <div class="panel-body no-padding">
+        <div class="padding-20 text-center core-icon">
+          <i class="fa fa-users icon-big text-azure"></i>
+        </div>
+        <div class="padding-20 core-content">
+          <h3 class="title block no-margin text-azure">Entreprises</h3>
+          <span class="subtitle">
+            Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper.
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6 col-lg-3 col-sm-6">
+    <div class="panel panel-default panel-white core-box">
+      <div class="panel-tools">
+        <a href="#" class="btn btn-xs btn-link panel-close">
+          <i class="fa fa-times"></i>
+        </a>
+      </div>
+      <div class="panel-body no-padding">
+        <div class="padding-20 text-center core-icon">
+          <i class="fa fa-users icon-big text-orange"></i>
+        </div>
+        <div class="padding-20 core-content">
+          <h3 class="title block no-margin text-orange">Collectivités</h3>
+          <span class="subtitle">
+            Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper.
+          </span>
+        </div>
       </div>
     </div>
   </div>
 </div>
-<!-- end: PAGE CONTENT-->
-<script>
-  jQuery(document).ready(function() {
-   
-   //Index.init();
-  });
 
+<div class="row">
+  <div class="col-md-6 col-lg-3 col-sm-6">
+    <div class="panel core-box small">
+      <div class="panel-tools">
+        <a href="#" class="btn btn-xs btn-link panel-close">
+          <i class="fa fa-times"></i>
+        </a>
+      </div>
+      <div class="panel-body no-padding">
+        <div class="text-center core-icon panel-blue">
+          <i class="fa fa-users icon-big"></i>
+        </div>
+        <div class="padding-20 core-content">
+          <h3 class="title block no-margin">Thématique 1</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6 col-lg-3 col-sm-6">
+    <div class="panel core-box small">
+      <div class="panel-tools">
+        <a href="#" class="btn btn-xs btn-link panel-close">
+          <i class="fa fa-times"></i>
+        </a>
+      </div>
+      <div class="panel-body no-padding">
+        <div class="text-center core-icon panel-blue">
+          <i class="fa fa-users icon-big"></i>
+        </div>
+        <div class="padding-20 core-content">
+          <h3 class="title block no-margin">Thématique 1</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6 col-lg-3 col-sm-6">
+    <div class="panel core-box small">
+      <div class="panel-tools">
+        <a href="#" class="btn btn-xs btn-link panel-close">
+          <i class="fa fa-times"></i>
+        </a>
+      </div>
+      <div class="panel-body no-padding">
+        <div class="text-center core-icon panel-blue">
+          <i class="fa fa-users icon-big"></i>
+        </div>
+        <div class="padding-20 core-content">
+          <h3 class="title block no-margin">Thématique 1</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6 col-lg-3 col-sm-6">
+    <div class="panel core-box small">
+      <div class="panel-tools">
+        <a href="#" class="btn btn-xs btn-link panel-close">
+          <i class="fa fa-times"></i>
+        </a>
+      </div>
+      <div class="panel-body no-padding">
+        <div class="text-center core-icon panel-blue">
+          <i class="fa fa-users icon-big"></i>
+        </div>
+        <div class="padding-20 core-content">
+          <h3 class="title block no-margin">Thématique 1</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">  
+  <div class="col-md-6 col-lg-3 col-sm-6">
+    <div class="panel panel-default panel-white core-box">
+      <div class="panel-tools">
+        <a href="#" class="btn btn-xs btn-link panel-close">
+          <i class="fa fa-times"></i>
+        </a>
+      </div>
+      <div class="panel-body no-padding">
+        <div class="padding-20 text-red text-center core-icon">
+          <i class="fa fa-cogs icon-big"></i>
+        </div>
+        <div class="padding-20 core-content">
+          <h3 class="title block no-margin">Config</h3>
+          <span class="subtitle"> You can control with config </span>
+            <p>check out LearnModule.php</p>
+            <p>check out components/LearnController.php</p>
+            <p>sidebar1 : manages left side menu</p>
+            <p>toolbarMenuAdd : manages ADD Menu Entry (TODO:show:Add)</p>
+            <p>toolbarMenuMaps : manages CARTO Menu Entry (TODO:show:Carto)</p>
+            <p>pages : list all available controler/action and defines </p>
+            <p>initPage() : can be used for any shareed process</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6 col-lg-3 col-sm-6">
+    <div class="panel panel-default panel-white core-box">
+      <div class="panel-tools">
+        <a href="#" class="btn btn-xs btn-link panel-close">
+          <i class="fa fa-times"></i>
+        </a>
+      </div>
+      <div class="panel-body no-padding">
+        <div class="text-green padding-20 text-center core-icon">
+          <i class="fa fa-list-alt  icon-big"></i>
+        </div>
+        <div class="padding-20 core-content">
+          <h3 class="title block no-margin">Form Manipulation</h3>
+          <span class="subtitle"> simple Form Processing  </span>
+            <p>click Add > add Event </p>
+            <p>to open it programatically <a >Click</a></p>
+          
+        </div>
+      </div>
+      <div class="panel-footer clearfix no-padding">
+        <div class=""></div>
+        <a href="#newEvent" class="new-event col-xs-6 padding-10 text-center text-white tooltips partition-blue" data-toggle="tooltip" data-placement="top" title="Add an Event" alt="Add an Event"><i class="fa fa-plus"></i></a>
+        <a href="<?php echo Yii::app()->createUrl("/".$this->module->id."/event")?>" class="col-xs-6 padding-10 text-center text-white tooltips partition-green" data-toggle="tooltip" data-placement="top" title="all Events"><i class="fa fa-chevron-right"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6 col-lg-3 col-sm-6">
+    <div class="panel panel-default panel-white core-box">
+      <div class="panel-tools">
+        <a href="#" class="btn btn-xs btn-link panel-close">
+          <i class="fa fa-times"></i>
+        </a>
+      </div>
+      <div class="panel-body no-padding">
+        <div class="padding-20 ">
+          <h3 class="title block no-margin">List of Events</h3>
+          <span class="subtitle"> Retreiving DB contents  </span>
+          <table  class="table eventList">
+            <thead>
+              <tr><th>NAME</th></tr>
+            </thead>
+            <tbody class="eventList">
+            <?php foreach ($events as $key => $value) {
+                echo "<tr><td>".$value["name"]."</td></tr>";
+            } ?>
+            </tbody>
+            </table>
+            <p>TODO : EDIT / Delete Btns</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<!-- end: PAGE CONTENT-->
+<script type="text/javascript">
+jQuery(document).ready(function() {
+ 
+});
+ function updateEvent(nevent,eventId){
+  console.log("updateEvent func");
+  var eventLine  = "<tr><td>"+nevent.title+"</td></tr>";
+  $(".eventList").append(eventLine);
+ }
 </script>
