@@ -5,6 +5,7 @@
 	</div>
 	<div id="calendar"></div>
 </div>
+
 <!-- *** NEW EVENT *** -->
 <div id="newEvent">
 	<div class="noteWrap col-md-8 col-md-offset-2">

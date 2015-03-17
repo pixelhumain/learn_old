@@ -26,7 +26,7 @@
           <i class="fa fa-users icon-big text-pink"></i>
         </div>
         <div class="padding-20 core-content">
-          <h3 class="title block no-margin text-pink">Citoyens</h3>
+          <h3 class="title block no-margin text-pink">Learn</h3>
           <span class="subtitle">
             Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper.
           </span>
@@ -44,10 +44,10 @@
       </div>
       <div class="panel-body no-padding">
         <div class="padding-20 text-center core-icon">
-          <i class="fa fa-users icon-big text-green"></i>
+          <i class="fa fa-lightbulb-o icon-big text-green"></i>
         </div>
         <div class="padding-20 core-content">
-          <h3 class="title block no-margin text-green">Associations</h3>
+          <h3 class="title block no-margin text-green">Think</h3>
           <span class="subtitle">
             Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper.
           </span>
@@ -65,10 +65,10 @@
       </div>
       <div class="panel-body no-padding">
         <div class="padding-20 text-center core-icon">
-          <i class="fa fa-users icon-big text-azure"></i>
+          <i class="fa fa-cogs icon-big text-azure"></i>
         </div>
         <div class="padding-20 core-content">
-          <h3 class="title block no-margin text-azure">Entreprises</h3>
+          <h3 class="title block no-margin text-azure">Build</h3>
           <span class="subtitle">
             Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper.
           </span>
@@ -85,10 +85,10 @@
       </div>
       <div class="panel-body no-padding">
         <div class="padding-20 text-center core-icon">
-          <i class="fa fa-users icon-big text-orange"></i>
+          <i class="fa fa-share-alt icon-big text-orange"></i>
         </div>
         <div class="padding-20 core-content">
-          <h3 class="title block no-margin text-orange">Collectivités</h3>
+          <h3 class="title block no-margin text-orange">Share</h3>
           <span class="subtitle">
             Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper.
           </span>
