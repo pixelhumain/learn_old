@@ -18,13 +18,6 @@
 						<input class="event-name form-control" name="eventName" type="text" placeholder="Event Name...">
 					</div>
 				</div>
-				<?php if(!isset(Yii::app()->session["userEmail"])){?>
-				<div class="col-md-12">
-					<div class="form-group">
-						<input class="event-name form-control" name="eventName" type="text" placeholder="Event Name...">
-					</div>
-				</div>
-				<?php } ?>
 				<div class="col-md-4">
 					<div class="form-group">
 						<input type="checkbox" class="all-day" data-label-text="All-Day" data-on-text="True" data-off-text="False">

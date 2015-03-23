@@ -56,6 +56,7 @@ class LearnController extends Controller
   public $subviews = array(
     "event.eventSV",
     "comments.commentSV",
+    "default.todoSV",
   );
 
 public $toolbarMenuMaps = array(
@@ -70,6 +71,10 @@ public $pages = array(
     "public"=>array("href"=>"/ph/learn/event/public",'title' => "View"),
     "save"=>array("href"=>"/ph/learn/event/save"),
     "delete"=>array("href"=>"/ph/learn/event/delete"),
+  ),
+  "todo" => array(
+    "save"=>array("href"=>"/ph/learn/todo/save"),
+    "delete"=>array("href"=>"/ph/learn/todo/delete"),
   ),
 );
 

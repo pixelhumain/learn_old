@@ -9,23 +9,23 @@
  */
 class DefaultController extends LearnController {
 
-    protected function beforeAction($action)
-  	{
-      parent::initPage();
-		  return parent::beforeAction($action);
-  	}
+  protected function beforeAction($action)
+	{
+    parent::initPage();
+	  return parent::beforeAction($action);
+	}
 
-    /**
-     * List all the latest observations
-     * @return [json Map] list
-     */
+  /**
+   * List all the latest observations
+   * @return [json Map] list
+  */
 	public function actionIndex() 
 	{
-    
     $events = PHDB::find(PHType::TYPE_EVENTS);
-    $this->render("index",array("events"=>$events));
-      
-      
+    $todos = PHDB::find(Todo::collection);
+
+    $this->render("index",array( "events"=>$events,
+                                 "todos"=>$todos ));      
   }
    
 }

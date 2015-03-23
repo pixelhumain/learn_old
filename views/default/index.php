@@ -211,8 +211,9 @@
           <h3 class="title block no-margin">Form Manipulation</h3>
           <span class="subtitle"> simple Form Processing  </span>
             <p>click Add > add Event </p>
-            <p>to open it programatically <a >Click</a></p>
-          
+            <p> <a href="#newEvent" class="btn btn-default new-event"><i class="fa fa-calendar"></i> new Event</a></p>
+            <hr>
+            <p> <a href="#newTodo" class="btn btn-default new-todo"><i class="fa fa-check-square"></i> todo CRUD</a></p>
         </div>
       </div>
       <div class="panel-footer clearfix no-padding">
@@ -236,7 +237,7 @@
           <span class="subtitle"> Retreiving DB contents  </span>
           <table  class="table eventList">
             <thead>
-              <tr><th>NAME</th></tr>
+              <tr><th>EVENT LIST</th></tr>
             </thead>
             <tbody class="eventList">
             <?php foreach ($events as $key => $value) {
@@ -250,15 +251,67 @@
     </div>
   </div>
 
+  <div class="col-md-6 col-lg-3 col-sm-6">
+    <div class="panel panel-default panel-white core-box">
+      <div class="panel-tools">
+        <a href="#" class="btn btn-xs btn-link panel-close">
+          <i class="fa fa-times"></i>
+        </a>
+      </div>
+      <div class="panel-body no-padding">
+        <div class="padding-20 ">
+          <table  class="table ">
+            <thead>
+              <tr><th>TODO LIST</th></tr>
+            </thead>
+            <tbody class="todoList">
+            <?php foreach ($todos as $key => $value) {
+                echo "<tr id='todo".(string)$value["_id"]."'>".
+                       "<td>".$value["name"]."</td>".
+                       "<td><a href='javascript:;' data-id='".(string)$value["_id"]."' class='deleteTodo btn btn-default btn-xs text-red'><i class='fa fa-times'></i> </a></td>".
+                     "</tr>";
+            } ?>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="panel-footer clearfix no-padding">
+        <div class=""></div>
+        <a href="#newTodo" class="new-todo col-xs-12 padding-10 text-center text-white tooltips partition-blue" data-toggle="tooltip" data-placement="top" title="Add a Todo" alt="Add a Todo"><i class="fa fa-plus"></i></a>
+        </div>
+    </div>
+  </div>
+
 </div>
 <!-- end: PAGE CONTENT-->
 <script type="text/javascript">
 jQuery(document).ready(function() {
- 
+ bindIndexEvents();
 });
+
+function bindIndexEvents () { 
+  $(".deleteTodo").off().on("click",function() { 
+    todoId = $(this).data("id");
+    deleteTodo(todoId);
+    $('#todo'+todoId ).css("background-color","#FF3700").fadeOut(800, function(){
+      $('#todo'+todoId ).remove();
+    });
+  });
+}
+
  function updateEvent(nevent,eventId){
   console.log("updateEvent func");
   var eventLine  = "<tr><td>"+nevent.title+"</td></tr>";
   $(".eventList").append(eventLine);
+ }
+
+ function updateTodo(ntodo,todoId){
+  console.log("updateTodo func");
+  var todoLine  = "<tr id='todo"+todoId["$id"]+"'>"+
+                  "<td>"+ntodo.name+"</td>"+
+                  "<td><a href='javascript:;' data-id='"+todoId["$id"]+"' class='deleteTodo btn btn-xs btn-default text-red'><i class='fa fa-times'></i> </a></td>"+
+                  "</tr>";
+  $(".todoList").append(todoLine);
+  bindIndexEvents ();
  }
 </script>

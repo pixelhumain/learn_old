@@ -1,13 +1,14 @@
 <?php 
 class Event {
 
+	const collection = "events";
 	/**
 	 * get an event By Id
 	 * @param type $id : is the mongoId of the event
 	 * @return type
 	 */
 	public static function getById($id) {
-	  	return PHDB::findOne( PHType::TYPE_EVENTS,array("_id"=>new MongoId($id)));
+	  	return PHDB::findOne( self::collection,array("_id"=>new MongoId($id)));
 	}
 
 	/**
@@ -60,7 +61,7 @@ class Event {
 	    if(!empty($params['start']))
 	         $new["startDate"] = $params['start'];
 
-	    PHDB::insert(PHType::TYPE_EVENTS,$new);
+	    PHDB::insert(self::collection,$new);
 	    
 	    //add the association to the users association list
 	    $where = array("_id" => new MongoId(Yii::app()->session["userId"]));
@@ -86,7 +87,7 @@ class Event {
 	   */
 		public static function deleteEvent($id)
 		{
-		    PHDB::remove( PHType::TYPE_EVENTS, array( "_id" => new MongoId($id) ) );
+		    PHDB::remove( self::collection, array( "_id" => new MongoId($id) ) );
             PHDB::update(PHType::TYPE_CITOYEN,array( "_id" => new MongoId( Yii::app()->session["userId"] ) ) , 
                                               array( '$pull' => array("events"=>$id)));
             return array("result"=>true, "msg"=>"Votre évènement est retiré.");
