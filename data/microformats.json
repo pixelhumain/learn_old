@@ -1,0 +1,17 @@
+{
+    "jsonSchema" : {
+        "title" : "Todyn Form",
+        "type" : "object",
+        "properties" : {
+            "name" : {
+                "inputType" : "text"
+            },
+            "date" : {
+                "inputType" : "date"
+            }
+        }
+    },
+    "collection" : "todos",
+    "key" : "todoForm",
+    "template" : "dynamicallyBuildBootstrap"
+}

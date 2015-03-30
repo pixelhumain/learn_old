@@ -1,6 +1,6 @@
 
 <!-- *** TODO *** -->
-<div id="newTodo">
+<div id="newTodo" class="hidden">
 	<div class="noteWrap col-md-4 col-md-offset-4">
 		<h3>Add new todo</h3>
 		<form class="form-todo">

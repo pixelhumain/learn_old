@@ -21,11 +21,13 @@ class DefaultController extends LearnController {
   */
 	public function actionIndex() 
 	{
-    $events = PHDB::find(PHType::TYPE_EVENTS);
+    $events = PHDB::findAndSort( PHType::TYPE_EVENTS, array(), array("created"=>1 ), 5);
     $todos = PHDB::find(Todo::collection);
+    $lastNews = News::getLatest();
 
     $this->render("index",array( "events"=>$events,
-                                 "todos"=>$todos ));      
+                                 "todos"=>$todos,
+                                 "lastNews"=>$lastNews ));      
   }
    
 }
