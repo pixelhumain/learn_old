@@ -1,23 +1,14 @@
 <?php
-//$cs = Yii::app()->getClientScript();
-
-//assets from the theme
-//$cs->registerCssFile(Yii::app()->theme->baseUrl. '/assets/plugins/weather-icons/css/weather-icons.min.css');
-//$cs->registerScriptFile(Yii::app()->theme->baseUrl. '/assets/plugins/bootstrap-progressbar/bootstrap-progressbar.min.js' , CClientScript::POS_END);
-
-//assets from the ctk
-//$cs->registerCssFile(Yii::app()->request->baseUrl. '/css/vis.css');
-
-//assets from the module
-//$cs->registerScriptFile($this->module->assetsUrl.'/js/script.js' , CClientScript::POS_END);
-
 $cs = Yii::app()->getClientScript();
 
 $cs->registerCssFile(Yii::app()->theme->baseUrl. '/assets/plugins/datepicker/css/datepicker.css');
 $cs->registerScriptFile(Yii::app()->theme->baseUrl. '/assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js' , CClientScript::POS_END);
 
-$cs->registerCssFile(Yii::app()->request->baseUrl . '/js/plugins/fineuploader/css/fineuploader.css');
-$cs->registerScriptFile(Yii::app()->request->baseUrl . '/js/plugins/fineuploader/js/jquery.fineuploader-3.2.min.js', CClientScript::POS_END)
+$cs->registerCssFile(Yii::app()->theme->baseUrl. '/assets/plugins/dropzone/downloads/css/ph.css');
+$cs->registerScriptFile(Yii::app()->theme->baseUrl. '/assets/plugins/dropzone/downloads/dropzone.min.js' , CClientScript::POS_END);
+
+$cs->registerCssFile(Yii::app()->theme->baseUrl. '/assets/plugins/lightbox2/css/lightbox.css');
+$cs->registerScriptFile(Yii::app()->theme->baseUrl. '/assets/plugins/lightbox2/js/lightbox.min.js' , CClientScript::POS_END);
 ?>
 <!-- start: PAGE CONTENT -->
 <div class="row">

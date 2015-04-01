@@ -51,12 +51,19 @@ class LearnController extends Controller
           "newNote" => array( "label"=>"Add new note","key"=>"newNote", "class"=>"new-note", "href"=>"#newNote", "iconStack"=>array("fa fa-list fa-stack-1x fa-lg","fa fa-plus fa-stack-1x stack-right-bottom text-danger")),
           "readNote" => array( "label"=>"Read All notes","class"=>"read-all-notes","key"=>"readNote", "href"=>"#readNote", "iconStack"=>array("fa fa-list fa-stack-1x fa-lg","fa fa-share fa-stack-1x stack-right-bottom text-danger")),
         )
-    )
+    ),
+    array('label' => "GED", "key"=>"ged",
+        "children"=> array(
+          "newFiles" => array( "label"=>"Add new file","key"=>"newFiles","class"=>"new-file", "href"=>"#genericGED", "iconStack"=>array("fa fa-file fa-stack-1x fa-lg","fa fa-plus fa-stack-1x stack-right-bottom text-danger")),
+          "fileList" => array( "label"=>"File List","key"=>"fileList", "class"=>"readFiles","href"=>"#genericGED", "iconStack"=>array("fa fa-file fa-stack-1x fa-lg","fa fa-bars fa-stack-1x stack-right-bottom text-danger")),
+        )
+    ),
   );
   public $subviews = array(
     "event.eventSV",
     "comments.commentSV",
     "default.todoSV",
+    "default.gedSV",
   );
 
 public $toolbarMenuMaps = array(
@@ -75,6 +82,9 @@ public $pages = array(
   "todo" => array(
     "save"=>array("href"=>"/ph/learn/todo/save"),
     "delete"=>array("href"=>"/ph/learn/todo/delete"),
+  ),
+  "ressource" => array(
+    "save"=>array("href"=>"/ph/learn/ressource/save")
   ),
 );
 
