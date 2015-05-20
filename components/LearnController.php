@@ -84,7 +84,12 @@ public $pages = array(
     "delete"=>array("href"=>"/ph/learn/todo/delete"),
   ),
   "ressource" => array(
-    "save"=>array("href"=>"/ph/learn/ressource/save")
+    "save"=>array("href"=>"/ph/learn/ressource/save"),
+  ),
+  "facebook" => array(
+    "index"=>array("href"=>"/ph/learn/facebook/index"),
+    "listgroups"=>array("href"=>"/ph/learn/facebook/listgroups"),
+    "group"=>array("href"=>"/ph/learn/facebook/group"),
   ),
 );
 
