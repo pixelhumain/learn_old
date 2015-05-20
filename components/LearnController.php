@@ -90,6 +90,7 @@ public $pages = array(
     "index"=>array("href"=>"/ph/learn/facebook/index"),
     "listgroups"=>array("href"=>"/ph/learn/facebook/listgroups"),
     "group"=>array("href"=>"/ph/learn/facebook/group"),
+    "share"=>array("href"=>"/ph/learn/facebook/share")
   ),
 );
 

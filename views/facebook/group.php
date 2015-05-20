@@ -1,20 +1,20 @@
 <?php
     
-    $url = 'http://127.0.0.1/ph/learn/facebook/group/idgroup/'.$idgroup;
+    /*$group_detail = Yii::app()->session["FB_group_detail"];
+    print_r($group_detail);
+    print_r($group);*/
 ?>
 <div>
     <div>
         <?php
             
         ?>
-        <h1><?php echo $idgroup ;?></h1>
-        <div>
-           Text : <?php print_r($textFB) ;?>
-        </div>
-        <form method="POST" action="<?php echo $url ;?>" id="shareForm" >
-            <input type="hidden" id="idgroup" value="<?php echo $idgroup ;?>"/>
+        <h1><?php echo $group_detail['name'] ;?></h1>
+        
+        <form method="POST" action="" id="shareForm" >
+            <input type="hidden" id="idgroup" value="<?php echo $group_detail['id'] ;?>"/>
             <textarea id="textFB">Bonjour venez vous aussi vous communectez</textarea>
-            <button class="btn btn-primary" id="submitPartager">Partager</button>
+            <a href="#" class="btn btn-primary" id="submitPartager">Partager</a>
         </form>
     </div> 
 </div>
@@ -22,26 +22,22 @@
 <script type="text/javascript">
 jQuery(document).ready(function() 
 {
-    var idgroup = $('#idgroup').val();
-    $.ajax({
-            type: "POST",
-            url: baseUrl+"/learn/facebook/group/idgroup/"+idgroup,
-        });
-
-     $("#shareForm").submit(function(e)
+     $("#submitPartager").on('click', function()
      {
-        //e.preventDefault();
-        $this = $(this);
-        var textFB = $('#textFB').val();
+        console.log("submit");
         $.ajax({
-            type: $this.attr('method'),
-            data: {textToRecup : "textFB="+textFB },
-            url: $this.attr('action'),
+            type: 'POST',
+            data: {textToRecup : $('#textFB').val() },
+            url: baseUrl+'/learn/facebook/share/',
             dataType : 'json',
             success: function(data)
             {
-                console.log(data);
-            },
+                console.dir(data);
+                if(data.result)
+                    toastr.success("success");
+                else
+                    toastr.error("error"); 
+            }
         });
     });
 
